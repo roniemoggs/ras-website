@@ -1,5 +1,6 @@
 "use client";
 
+import HeroWave from "@/components/ui/dynamic-wave-canvas-background";
 import { HeroCanvas } from "@/components/HeroCanvas";
 import { Navbar } from "@/components/Navbar";
 import { HolographicCard } from "@/components/ui/holographic-card";
@@ -76,7 +77,9 @@ export default function Home() {
   return (
     <main className="min-h-screen relative" style={{ background: 'transparent' }}>
       {/* ── Fixed cosmic background ── */}
-      <div className="page-bg" />
+      <div className="page-bg">
+        <HeroWave />
+      </div>
       <div className="page-bg-overlay" />
       <GlassFilter />
 
