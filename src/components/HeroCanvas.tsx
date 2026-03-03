@@ -89,11 +89,11 @@ export function HeroCanvas() {
 
     return (
         <div ref={containerRef} className="relative h-[300vh]">
-            <div className="sticky top-0 h-screen w-full overflow-hidden bg-black">
+            <div className="sticky top-0 h-screen w-full overflow-hidden">
                 <canvas ref={canvasRef} className="absolute inset-0 w-full h-full object-cover" />
 
-                {/* Subtle bottom fade into page background */}
-                <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[rgba(3,5,8,0.95)] via-[rgba(3,5,8,0.5)] to-transparent z-10" />
+                {/* Subtle bottom fade — gradual to transparent for cloud overlap */}
+                <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-transparent via-[rgba(3,5,8,0.3)] to-transparent z-10" />
             </div>
         </div>
     );

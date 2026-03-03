@@ -1,0 +1,83 @@
+[
+  {
+    "id": 0,
+    "title": "NVIDIA",
+    "category": [
+      "AI",
+      "Hardware",
+      "Platform"
+    ],
+    "route": {
+      "light": "https://svgl.app/library/nvidia-icon-light.svg",
+      "dark": "https://svgl.app/library/nvidia-icon-dark.svg"
+    },
+    "wordmark": {
+      "light": "https://svgl.app/library/nvidia-wordmark-light.svg",
+      "dark": "https://svgl.app/library/nvidia-wordmark-dark.svg"
+    },
+    "url": "https://www.nvidia.com",
+    "brandUrl": "https://www.nvidia.com/en-us/about-nvidia/legal-info/logo-brand-usage"
+  },
+  {
+    "id": 259,
+    "title": "OpenAI",
+    "category": "AI",
+    "route": {
+      "light": "https://svgl.app/library/openai.svg",
+      "dark": "https://svgl.app/library/openai_dark.svg"
+    },
+    "wordmark": {
+      "light": "https://svgl.app/library/openai_wordmark_light.svg",
+      "dark": "https://svgl.app/library/openai_wordmark_dark.svg"
+    },
+    "url": "https://openai.com/",
+    "brandUrl": "https://openai.com/brand/"
+  },
+  {
+    "id": 440,
+    "title": "Supabase",
+    "category": "Database",
+    "route": "https://svgl.app/library/supabase.svg",
+    "url": "https://supabase.com/",
+    "wordmark": {
+      "light": "https://svgl.app/library/supabase_wordmark_light.svg",
+      "dark": "https://svgl.app/library/supabase_wordmark_dark.svg"
+    },
+    "brandUrl": "https://supabase.com/brand-assets"
+  },
+  {
+    "id": 449,
+    "title": "Turso",
+    "category": [
+      "Database",
+      "Software"
+    ],
+    "route": {
+      "light": "https://svgl.app/library/turso-light.svg",
+      "dark": "https://svgl.app/library/turso-dark.svg"
+    },
+    "wordmark": {
+      "light": "https://svgl.app/library/turso-wordmark-light.svg",
+      "dark": "https://svgl.app/library/turso-wordmark-dark.svg"
+    },
+    "url": "https://turso.tech"
+  },
+  {
+    "id": 506,
+    "title": "Vercel",
+    "category": [
+      "Hosting",
+      "Vercel"
+    ],
+    "route": {
+      "light": "https://svgl.app/library/vercel.svg",
+      "dark": "https://svgl.app/library/vercel_dark.svg"
+    },
+    "wordmark": {
+      "light": "https://svgl.app/library/vercel_wordmark.svg",
+      "dark": "https://svgl.app/library/vercel_wordmark_dark.svg"
+    },
+    "brandUrl": "https://vercel.com/geist/brands",
+    "url": "https://vercel.com/"
+  }
+]

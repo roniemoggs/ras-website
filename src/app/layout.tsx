@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
-import { Playfair_Display, JetBrains_Mono } from "next/font/google";
+import { Cormorant_Garamond, Outfit, Oswald } from "next/font/google";
 import "./globals.css";
 import React from "react";
 import ClientLayout from "./client-layout";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const oswald = Oswald({
+  variable: "--font-oswald",
   subsets: ["latin"],
 });
 
@@ -26,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${jetbrainsMono.variable}`}>
+      <body className={`${cormorant.variable} ${outfit.variable} ${oswald.variable}`}>
         <ClientLayout>{children}</ClientLayout>
         <div className="noise-overlay" />
       </body>
