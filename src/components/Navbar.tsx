@@ -90,7 +90,7 @@ export function Navbar() {
                             {/* ── Brand + tabs ── */}
                             <div className="navbar-glass-container">
                                 {/* ── Brand ── */}
-                                <span className="navbar-brand">RadhaAI Solutions</span>
+                                <span className="navbar-brand">Radha AI Solutions</span>
 
                                 {/* ── Section tabs ── */}
                                 <div className="navbar-tabs">

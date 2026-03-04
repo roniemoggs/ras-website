@@ -858,7 +858,7 @@
 }
 
 .contact-input::placeholder {
-  color: rgba(26, 26, 26, 0.4);
+  color: rgba(26, 26, 26, 0.65);
 }
 
 .contact-input:focus {
@@ -1462,4 +1462,16 @@
   .service-modal-body {
     padding: 20px;
   }
+}
+
+/* ════════════════════════════════════════════
+   Spline Overrides
+   ════════════════════════════════════════════ */
+.spline-watermark,
+#logo,
+a[href*="spline.design"] {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
 }

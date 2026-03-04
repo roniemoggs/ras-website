@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 
 import { MeshGradientBg } from "@/components/ui/mesh-gradient-bg";
 import { HeroCanvas } from "@/components/HeroCanvas";
+import { SplineScene } from "@/components/ui/spline-scene";
 import { Navbar } from "@/components/Navbar";
 import { GlassEffect, GlassFilter } from "@/components/ui/liquid-glass";
 import { LiquidGlassCard as NotificationCard } from "@/components/ui/liquid-notification";
@@ -13,7 +14,9 @@ import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { LiquidGlassCard } from "@/components/ui/liquid-weather-glass";
 import { GlassButton } from "@/components/ui/glass-button";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { GradientButton } from "@/components/ui/gradient-button";
 import { ServiceModal } from "@/components/ServiceModal";
+
 import { motion } from "framer-motion";
 import {
   Bot,
@@ -311,26 +314,48 @@ export default function Home() {
           ═══════════════════════════════════════ */}
       <section id="benefits" className="relative z-10 py-24 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div {...fadeUp} className="w-full h-full min-h-[500px] liquid-glass anti-gravity rounded-[24px] relative overflow-hidden flex items-center justify-center border-white/20 bg-black/5">
-            {/* 3D placeholder background & effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a]/10 to-transparent mix-blend-overlay" />
-            <div className="relative text-center p-8">
-              <div className="w-24 h-24 mx-auto mb-6 rounded-full liquid-glass flex items-center justify-center border-white/30 bg-white/20 shadow-[0_0_40px_rgba(255,255,255,0.4)]">
-                <BrainCircuit className="w-10 h-10 text-[#1a1a1a]" />
+          <div
+            className="w-full h-full min-h-[500px] relative pointer-events-auto flex items-center justify-center"
+            onWheelCapture={(e) => {
+              // Prevent Spline from intercepting the scroll wheel (fixes unintended 3D zooming/scrolling issues)
+              e.stopPropagation();
+            }}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="absolute top-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center w-full pointer-events-none"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/30 border border-black/5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] backdrop-blur-md mb-4 mt-8 md:mt-0 pointer-events-auto">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                </span>
+                <span className="text-xs font-bold text-[#1a1a1a] uppercase tracking-widest">
+                  Agent Online
+                </span>
               </div>
-              <p className="font-[family-name:var(--font-oswald)] uppercase text-[#1a1a1a]/50 tracking-[0.2em] font-bold text-sm">
-                FUTURISTIC 3D ELEMENT PLACEHOLDER
-              </p>
+              <h3 className="font-[family-name:var(--font-oswald)] text-3xl md:text-5xl font-extrabold text-[#1a1a1a] uppercase text-center leading-none tracking-tight pointer-events-auto">
+                Autonomous <br /> Intelligence
+              </h3>
+            </motion.div>
+
+            <div className="absolute inset-0 z-0 overflow-hidden">
+              <SplineScene
+                scene="https://prod.spline.design/2xK-9n5ApG7czR0w/scene.splinecode"
+                className="w-full h-full"
+              />
             </div>
-          </motion.div>
+          </div>
 
           <div className="flex flex-col gap-6">
-            <motion.div {...fadeUp} className="mb-8">
+            <motion.div {...fadeUp} className="mb-8 flex flex-col items-center text-center">
               <h2 className="font-[family-name:var(--font-oswald)] uppercase font-extrabold text-5xl md:text-7xl leading-tight text-[#1a1a1a]">
-                Built for <br />
-                <span className="text-[#1a1a1a]/40 not-italic">Real Results</span>
+                Built for <span className="text-[#1a1a1a]/40 not-italic">Real Results</span>
               </h2>
-              <p className="font-body text-[#1a1a1a]/80 mt-6 max-w-md text-base leading-relaxed">
+              <p className="font-body text-[#1a1a1a]/80 mt-6 max-w-lg text-base leading-relaxed">
                 We focus on what matters most: cutting costs, boosting your efficiency, and building scalable systems that work around the clock.
               </p>
             </motion.div>
@@ -434,7 +459,7 @@ export default function Home() {
           6. Case Studies / Testimonials
           ═══════════════════════════════════════ */}
       <section id="work" className="relative z-10 py-24 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
-        <motion.div {...fadeUp} className="mb-16 text-center">
+        <motion.div {...fadeUp} className="mb-6 text-center">
           <span className="section-tag section-tag--centered">Proven Outcomes</span>
           <h2 className="font-[family-name:var(--font-oswald)] uppercase font-extrabold text-4xl md:text-5xl mt-4 text-[#1a1a1a]">
             Client Success
@@ -510,7 +535,7 @@ export default function Home() {
                 />
               </div>
               <textarea
-                placeholder="OBJECTIVES & PARAMETERS..."
+                placeholder="HOW CAN WE HELP YOU?"
                 rows={4}
                 className="contact-input resize-none"
                 value={formData.message}
@@ -518,14 +543,15 @@ export default function Home() {
                 required
               />
               <div className="pt-4">
-                <button
+                <GradientButton
                   type="submit"
-                  className="contact-button"
+                  variant="variant"
+                  className="w-full rounded-full h-16 text-base tracking-[0.15em] uppercase font-bold"
                   disabled={formStatus === "loading"}
                   style={{ opacity: formStatus === "loading" ? 0.7 : 1 }}
                 >
                   {formStatus === "loading" ? "Sending..." : formStatus === "success" ? "✓ Message Sent" : formStatus === "error" ? "Failed — Retry" : "Let's Work Together"}
-                </button>
+                </GradientButton>
               </div>
               {formStatus === "success" && (
                 <p className="text-center text-[#1a1a1a]/80 font-body text-sm mt-2 animate-pulse">
