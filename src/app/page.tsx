@@ -5,7 +5,13 @@ import emailjs from "@emailjs/browser";
 
 import { MeshGradientBg } from "@/components/ui/mesh-gradient-bg";
 import { HeroCanvas } from "@/components/HeroCanvas";
-import { SplineScene } from "@/components/ui/spline-scene";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+
+const SplineScene = dynamic(() => import('@/components/ui/spline-scene').then(mod => mod.SplineScene), {
+  ssr: false,
+});
+
 import { Navbar } from "@/components/Navbar";
 import { GlassEffect, GlassFilter } from "@/components/ui/liquid-glass";
 import { LiquidGlassCard as NotificationCard } from "@/components/ui/liquid-notification";
@@ -168,25 +174,25 @@ export default function Home() {
     try {
       // 1. Admin notification email (uses {{name}}, {{email}}, {{message}})
       await emailjs.send(
-        "service_n97xbsx",
-        "template_pms5hte",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_ADMIN_TEMPLATE_ID as string,
         {
           name: formData.name,
           email: formData.email,
           message: formData.message,
         },
-        "lriP6CNJwLPbv3zWC"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
       );
       // 2. Auto-reply to customer (uses {{from_email}}, {{name}}, {{message}})
       await emailjs.send(
-        "service_n97xbsx",
-        "template_xmaaq4e",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_REPLY_TEMPLATE_ID as string,
         {
           from_email: formData.email,
           name: formData.name,
           message: formData.message,
         },
-        "lriP6CNJwLPbv3zWC"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
       );
       setFormStatus("success");
       setFormData({ name: "", email: "", message: "" });
@@ -251,10 +257,12 @@ export default function Home() {
               className="relative h-[480px] rounded-[32px] overflow-hidden group cursor-pointer anti-gravity"
               onClick={() => setSelectedService(item)}
             >
-              <img
+              <Image
                 src={item.imageSrc}
                 alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
               <div className="absolute inset-0 p-8 flex flex-col justify-end">
@@ -440,11 +448,15 @@ export default function Home() {
                       <p className="font-body text-[#1a1a1a]/70 text-base md:text-lg">
                         {step.desc}
                       </p>
-                      <img
-                        src={step.imageSrc}
-                        alt={step.title}
-                        className="w-full h-32 sm:h-48 object-cover rounded-xl border border-[rgba(26,26,26,0.1)] shadow-sm"
-                      />
+                      <div className="relative w-full h-32 sm:h-48 overflow-hidden rounded-xl border border-[rgba(26,26,26,0.1)] shadow-sm">
+                        <Image
+                          src={step.imageSrc}
+                          alt={step.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover"
+                        />
+                      </div>
                     </motion.div>
                   </div>
                 )}

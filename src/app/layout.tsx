@@ -3,6 +3,8 @@ import { Cormorant_Garamond, Outfit, Oswald } from "next/font/google";
 import "./globals.css";
 import React from "react";
 import ClientLayout from "./client-layout";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -23,6 +25,17 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   title: "Radha AI Solutions | Premium AI Agency",
   description: "Bespoke AI automation, custom ML development, and intelligent agent integrations.",
+  openGraph: {
+    title: "Radha AI Solutions | Premium AI Agency",
+    description: "Bespoke AI automation, custom ML development, and intelligent agent integrations.",
+    type: "website",
+    url: "https://radhaai.com",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Radha AI Solutions | Premium AI Agency",
+    description: "Bespoke AI automation, custom ML development, and intelligent agent integrations.",
+  },
 };
 
 export default function RootLayout({
@@ -35,6 +48,8 @@ export default function RootLayout({
       <body className={`${cormorant.variable} ${outfit.variable} ${oswald.variable}`}>
         <ClientLayout>{children}</ClientLayout>
         <div className="noise-overlay" />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
