@@ -490,7 +490,7 @@ export default function Home() {
         <div className="w-full mb-10 md:mb-16">
           <h2 className="text-center font-[family-name:var(--font-oswald)] uppercase flex flex-col items-center justify-center">
             <span className="block font-semibold text-sm md:text-base text-[#1a1a1a]/50 mb-1 tracking-[0.2em]">
-              ALREADY USED BY
+              WE ONLY USE THE
             </span>
             <span className="font-bold text-3xl md:text-5xl tracking-tight text-[#1a1a1a] leading-none">
               BEST IN THE GAME
