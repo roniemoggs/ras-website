@@ -109,8 +109,8 @@ const benefits = [
 const processSteps = [
   { phase: "1", title: "Discovery", desc: "Deep architectural audit of your existing infrastructure and data pipelines.", imageSrc: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800" },
   { phase: "2", title: "Design", desc: "Blueprint formulation of the AI agent hierarchy and neural architecture.", imageSrc: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" },
-  { phase: "3", title: "Development", desc: "Rigorous coding, model training, and integration testing in isolated sandboxes.", imageSrc: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=800" },
-  { phase: "4", title: "Deployment", desc: "Phased rollout with real-time monitoring and feedback loops for continuous learning.", imageSrc: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" },
+  { phase: "3", title: "Build", desc: "Rigorous coding, model training, and integration testing in isolated sandboxes.", imageSrc: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=800" },
+  { phase: "4", title: "Launch", desc: "Phased rollout with real-time monitoring and feedback loops for continuous learning.", imageSrc: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" },
 ];
 
 const logos = [
