@@ -25,16 +25,29 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   title: "Radha AI Solutions | Premium AI Agency",
   description: "Bespoke AI automation, custom ML development, and intelligent agent integrations.",
+  metadataBase: new URL("https://radhaai.com"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Radha AI Solutions | Premium AI Agency",
     description: "Bespoke AI automation, custom ML development, and intelligent agent integrations.",
     type: "website",
     url: "https://radhaai.com",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Radha AI Solutions — Where Divinity Meets Intelligence",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Radha AI Solutions | Premium AI Agency",
     description: "Bespoke AI automation, custom ML development, and intelligent agent integrations.",
+    images: ["/og-image.png"],
   },
 };
 

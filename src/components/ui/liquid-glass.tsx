@@ -199,7 +199,7 @@ export const Component = () => {
         <div
             className="min-h-[500px] h-full flex items-center justify-center font-light relative overflow-hidden w-full rounded-2xl"
             style={{
-                background: `url("https://images.unsplash.com/photo-1432251407527-504a6b4174a2?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center center / cover`,
+                background: `url("/glass-bg.jpg") center center / cover`,
                 animation: "moveBackground 60s linear infinite",
             }}
         >

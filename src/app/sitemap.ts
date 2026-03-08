@@ -5,8 +5,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: 'https://radhaai.com',
             lastModified: new Date(),
-            changeFrequency: 'yearly',
+            changeFrequency: 'monthly',
             priority: 1,
+        },
+        {
+            url: 'https://radhaai.com/privacy',
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.3,
+        },
+        {
+            url: 'https://radhaai.com/terms',
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.3,
         },
     ]
 }
