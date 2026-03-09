@@ -27,13 +27,13 @@ const processSteps = [
 
 export function ProcessSection() {
     return (
-        <section id="process" className="relative z-10 py-24 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
-            <motion.div {...fadeUp} className="flex flex-col items-center text-center mb-20">
-                <span className="section-tag section-tag--centered">Methodology</span>
-                <h2 className="font-[family-name:var(--font-oswald)] uppercase font-extrabold text-5xl md:text-7xl mt-4 !text-[#1a1a1a]">
+        <section id="process" className="relative z-10 py-12 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
+            <motion.div {...fadeUp} className="flex flex-col items-center text-center mb-12 md:mb-20">
+                <span className="section-tag section-tag--centered text-[10px] md:text-xs py-1.5 px-3 md:py-2 md:px-4">Methodology</span>
+                <h2 className="font-[family-name:var(--font-oswald)] uppercase font-extrabold text-2xl md:text-7xl mt-2 md:mt-4 !text-[#1a1a1a]">
                     Execution Protocol
                 </h2>
-                <span className="font-body text-[#1a1a1a] mt-4 font-bold tracking-widest text-sm">
+                <span className="font-body text-[#1a1a1a] mt-2 md:mt-4 font-bold tracking-widest text-xs md:text-sm">
                     / 04 PHASES
                 </span>
             </motion.div>
@@ -55,14 +55,14 @@ export function ProcessSection() {
                             shadowIntensity="md"
                             glowIntensity="sm"
                             borderRadius="24px"
-                            className="process-content bg-white/10 anti-gravity overflow-hidden border-white/20 !p-0 min-h-[100px]"
+                            className="process-content bg-white/10 anti-gravity overflow-hidden border-white/20 !p-0 min-h-[80px] md:min-h-[100px]"
                         >
                             {(isExpanded) => (
-                                <div className="flex flex-col justify-center h-full sm:min-h-[100px] w-full p-6 md:p-8 relative">
-                                    <div className="process-number">{step.phase}</div>
+                                <div className="flex flex-col justify-center h-full sm:min-h-[100px] w-full p-3 md:p-8 relative">
+                                    <div className="process-number text-xl md:text-4xl">{step.phase}</div>
                                     <div className="flex items-center justify-between w-full relative z-10">
-                                        <div className="flex items-center gap-4">
-                                            <h4 className="text-xl md:text-2xl font-[family-name:var(--font-oswald)] font-extrabold text-[#1a1a1a] uppercase truncate pr-4">
+                                        <div className="flex items-center gap-2 md:gap-4 pl-10 md:pl-0">
+                                            <h4 className="text-base md:text-2xl font-[family-name:var(--font-oswald)] font-extrabold text-[#1a1a1a] uppercase truncate pr-4">
                                                 {step.title}
                                             </h4>
                                         </div>
@@ -75,12 +75,12 @@ export function ProcessSection() {
                                             marginTop: isExpanded ? 16 : 0
                                         }}
                                         transition={{ duration: 0.3 }}
-                                        className="overflow-hidden relative z-10 flex flex-col gap-4"
+                                        className="overflow-hidden relative z-10 flex flex-col gap-3 md:gap-4"
                                     >
-                                        <p className="font-body text-[#1a1a1a]/70 text-base md:text-lg">
+                                        <p className="font-body text-[#1a1a1a]/70 text-[11px] md:text-lg pl-10 md:pl-0 mt-1 md:mt-0">
                                             {step.desc}
                                         </p>
-                                        <div className="relative w-full h-32 sm:h-48 overflow-hidden rounded-xl border border-[rgba(26,26,26,0.1)] shadow-sm">
+                                        <div className="relative w-full h-20 sm:h-48 overflow-hidden rounded-xl border border-[rgba(26,26,26,0.1)] shadow-sm">
                                             <Image
                                                 src={step.imageSrc}
                                                 alt={step.title}

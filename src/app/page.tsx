@@ -111,13 +111,13 @@ export default function Home() {
       {/* ═══════════════════════════════════════
           2. Services / Solutions
           ═══════════════════════════════════════ */}
-      <section id="services" className="relative z-10 py-24 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
-        <AnimatedSection className="mb-16 text-center flex flex-col items-center">
-          <span className="section-tag section-tag--centered">TRANSFORMING BUSINESS THROUGH INTELLIGENCE</span>
-          <h2 className="font-[family-name:var(--font-oswald)] uppercase font-extrabold text-5xl md:text-7xl lg:text-8xl tracking-tight text-[#1a1a1a] leading-none mt-2">
+      <section id="services" className="relative z-10 py-12 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
+        <AnimatedSection className="mb-8 md:mb-16 text-center flex flex-col items-center">
+          <span className="section-tag section-tag--centered text-[10px] md:text-xs py-1.5 px-3 md:py-2 md:px-4">TRANSFORMING BUSINESS THROUGH INTELLIGENCE</span>
+          <h2 className="font-[family-name:var(--font-oswald)] uppercase font-extrabold text-3xl sm:text-4xl md:text-7xl lg:text-8xl tracking-tight text-[#1a1a1a] leading-none mt-2">
             OUR SERVICES
           </h2>
-          <p className="font-body text-[rgba(26,26,26,0.85)] font-medium mt-6 max-w-2xl text-lg leading-relaxed">
+          <p className="font-body text-[rgba(26,26,26,0.85)] font-medium mt-4 md:mt-6 max-w-2xl text-sm md:text-lg leading-relaxed">
             We bridge the gap between complex AI technology and practical business value. Explore how our tailored solutions can accelerate your growth.
           </p>
         </AnimatedSection>
@@ -143,10 +143,10 @@ export default function Home() {
       {/* ═══════════════════════════════════════
           6. Case Studies / Testimonials
           ═══════════════════════════════════════ */}
-      <section id="work" className="relative z-10 py-24 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
-        <AnimatedSection className="mb-6 text-center">
-          <span className="section-tag section-tag--centered">Proven Outcomes</span>
-          <h2 className="font-[family-name:var(--font-oswald)] uppercase font-extrabold text-4xl md:text-5xl mt-4 text-[#1a1a1a]">
+      <section id="work" className="relative z-10 py-12 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
+        <AnimatedSection className="mb-6 md:mb-8 text-center">
+          <span className="section-tag section-tag--centered text-xs md:text-sm py-1.5 px-3 md:py-2 md:px-4">Proven Outcomes</span>
+          <h2 className="font-[family-name:var(--font-oswald)] uppercase font-extrabold text-2xl md:text-5xl mt-2 md:mt-4 text-[#1a1a1a]">
             Client Success
           </h2>
         </AnimatedSection>
@@ -164,13 +164,13 @@ export default function Home() {
       {/* ═══════════════════════════════════════
           Logo Cloud / Trusted By
           ═══════════════════════════════════════ */}
-      <section className="relative z-10 py-24 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto overflow-hidden">
-        <div className="w-full mb-10 md:mb-16">
+      <section className="relative z-10 py-8 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto overflow-hidden">
+        <div className="w-full mb-6 md:mb-16">
           <h2 className="text-center font-[family-name:var(--font-oswald)] uppercase flex flex-col items-center justify-center">
-            <span className="block font-semibold text-sm md:text-base text-[#1a1a1a]/50 mb-1 tracking-[0.2em]">
+            <span className="block font-semibold text-[10px] md:text-sm text-[#1a1a1a]/50 mb-1 tracking-[0.2em]">
               WE ONLY USE THE
             </span>
-            <span className="font-bold text-3xl md:text-5xl tracking-tight text-[#1a1a1a] leading-none">
+            <span className="font-bold text-2xl md:text-5xl tracking-tight text-[#1a1a1a] leading-none">
               BEST IN THE GAME
             </span>
           </h2>

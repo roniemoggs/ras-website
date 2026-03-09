@@ -47,13 +47,13 @@ const differentiators = [
 
 export function WhyUsSection() {
     return (
-        <section className="relative z-10 py-24 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
-            <motion.div {...fadeUp} className="mb-16 text-center flex flex-col items-center">
-                <span className="section-tag section-tag--centered">What Sets Us Apart</span>
-                <h2 className="font-[family-name:var(--font-oswald)] uppercase font-extrabold text-4xl md:text-5xl lg:text-6xl tracking-tight text-[#1a1a1a] leading-none mt-2">
+        <section className="relative z-10 py-12 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
+            <motion.div {...fadeUp} className="mb-10 md:mb-16 text-center flex flex-col items-center">
+                <span className="section-tag section-tag--centered text-[10px] md:text-sm py-1.5 px-3 md:py-2 md:px-4">What Sets Us Apart</span>
+                <h2 className="font-[family-name:var(--font-oswald)] uppercase font-extrabold text-2xl md:text-5xl lg:text-6xl tracking-tight text-[#1a1a1a] leading-none mt-2">
                     Why Choose Us
                 </h2>
-                <p className="font-body text-[rgba(26,26,26,0.85)] font-medium mt-6 max-w-2xl text-lg leading-relaxed">
+                <p className="font-body text-[rgba(26,26,26,0.85)] font-medium mt-4 md:mt-6 max-w-2xl text-sm md:text-lg leading-relaxed">
                     We&apos;re not just another AI agency. Here&apos;s why forward-thinking companies partner with us.
                 </p>
             </motion.div>
@@ -67,16 +67,16 @@ export function WhyUsSection() {
                             borderRadius="24px"
                             glowIntensity="xs"
                             blurIntensity="xl"
-                            className="flex items-start gap-6 p-8 bg-white/8 anti-gravity h-full"
+                            className="flex items-start gap-3 md:gap-6 p-3.5 md:p-8 bg-white/8 anti-gravity h-full"
                         >
-                            <div className="w-14 h-14 rounded-2xl liquid-glass flex flex-shrink-0 items-center justify-center bg-white/30 border-white/40 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-                                <item.icon className="w-7 h-7 text-[#1a1a1a]" />
+                            <div className="w-9 h-9 md:w-14 md:h-14 rounded-xl md:rounded-2xl liquid-glass flex flex-shrink-0 items-center justify-center bg-white/30 border-white/40 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                                <item.icon className="w-4 h-4 md:w-7 md:h-7 text-[#1a1a1a]" />
                             </div>
                             <div>
-                                <h3 className="font-[family-name:var(--font-oswald)] text-xl font-bold text-[#1a1a1a] uppercase tracking-wide mb-2">
+                                <h3 className="font-[family-name:var(--font-oswald)] text-base md:text-xl font-bold text-[#1a1a1a] uppercase tracking-wide mb-1.5 md:mb-2">
                                     {item.title}
                                 </h3>
-                                <p className="font-body text-[#1a1a1a]/70 text-sm leading-relaxed">
+                                <p className="font-body text-[#1a1a1a]/70 text-[11px] md:text-sm leading-relaxed">
                                     {item.description}
                                 </p>
                             </div>

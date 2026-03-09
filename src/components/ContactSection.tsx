@@ -57,31 +57,31 @@ export function ContactSection() {
         <section id="contact" className="contact-section relative z-10 px-4 md:px-8">
             <motion.div {...fadeUp} className="w-full max-w-[1200px] mx-auto">
                 <LiquidGlassCard
-                    className="contact-glass anti-gravity w-full p-8 md:p-12 lg:p-16"
+                    className="contact-glass anti-gravity w-full p-6 md:p-12 lg:p-16"
                     draggable={false}
                     blurIntensity="xl"
                     shadowIntensity="md"
                     glowIntensity="sm"
-                    borderRadius="32px"
+                    borderRadius="24px"
                 >
-                    <div className="text-center mb-12">
-                        <h2 className="font-[family-name:var(--font-oswald)] uppercase font-extrabold text-5xl md:text-6xl mb-4 text-[#1a1a1a]">
+                    <div className="text-center mb-6 md:mb-12">
+                        <h2 className="font-[family-name:var(--font-oswald)] uppercase font-extrabold text-2xl md:text-6xl mb-2 md:mb-4 text-[#1a1a1a]">
                             Contact Us
                         </h2>
-                        <p className="font-body text-[#1a1a1a]/70 max-w-md mx-auto text-base leading-relaxed">
+                        <p className="font-body text-[#1a1a1a]/70 max-w-md mx-auto text-xs md:text-base leading-relaxed">
                             Ready to integrate intelligence into your operations? Secure a consultation to discuss architecture and implementation.
                         </p>
                     </div>
 
-                    <form className="space-y-6 max-w-2xl mx-auto" onSubmit={handleContactSubmit}>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <form className="space-y-4 md:space-y-6 max-w-2xl mx-auto" onSubmit={handleContactSubmit}>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                             <div>
                                 <label htmlFor="contact-name" className="sr-only">Name / Organization</label>
                                 <input
                                     id="contact-name"
                                     type="text"
                                     placeholder="NAME // ORGANIZATION"
-                                    className="contact-input"
+                                    className="contact-input !text-xs md:!text-base !p-3 md:!p-4"
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                     required
@@ -93,7 +93,7 @@ export function ContactSection() {
                                     id="contact-email"
                                     type="email"
                                     placeholder="EMAIL ADDRESS"
-                                    className="contact-input"
+                                    className="contact-input !text-xs md:!text-base !p-3 md:!p-4"
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                     required
@@ -106,17 +106,17 @@ export function ContactSection() {
                                 id="contact-message"
                                 placeholder="HOW CAN WE HELP YOU?"
                                 rows={4}
-                                className="contact-input resize-none"
+                                className="contact-input resize-none !text-xs md:!text-base !p-3 md:!p-4"
                                 value={formData.message}
                                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                 required
                             />
                         </div>
-                        <div className="pt-4">
+                        <div className="pt-2 md:pt-4">
                             <GradientButton
                                 type="submit"
                                 variant="variant"
-                                className="w-full rounded-full h-16 text-base tracking-[0.15em] uppercase font-bold"
+                                className="w-full rounded-[20px] md:rounded-full h-12 md:h-16 text-xs md:text-base tracking-[0.1em] md:tracking-[0.15em] uppercase font-bold"
                                 disabled={formStatus === "loading"}
                                 style={{ opacity: formStatus === "loading" ? 0.7 : 1 }}
                             >

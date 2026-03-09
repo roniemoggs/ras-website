@@ -12,7 +12,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
             gestureOrientation: "vertical",
             smoothWheel: true,
             wheelMultiplier: 1,
-            touchMultiplier: 2,
+            touchMultiplier: 1.5,
+            syncTouch: true,
         });
 
         function raf(time: number) {

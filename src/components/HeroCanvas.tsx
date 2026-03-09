@@ -2,29 +2,37 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
+import { useIsMobile } from "@/lib/useIsMobile";
+import Image from "next/image";
 
 export function HeroCanvas() {
     const containerRef = useRef<HTMLDivElement>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isLoading, setIsLoading] = useState(true);
+    const isMobile = useIsMobile();
 
-    // Track scroll within this 300vh container
+    // Track scroll within this container (desktop only)
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end end"]
     });
 
-    // Derive h1 opacity: fully visible at start, fades out by 30% scroll
     const h1Opacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
 
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
         setIsMounted(true);
+
+        // Skip video scrub setup on mobile
+        if (isMobile) {
+            setIsLoading(false);
+            return;
+        }
+
         const video = videoRef.current;
         if (!video) return;
 
-        // Once metadata is loaded we know the duration
         const handleLoaded = () => setIsLoading(false);
         if (video.readyState >= 1) {
             handleLoaded();
@@ -43,8 +51,28 @@ export function HeroCanvas() {
             video.removeEventListener("loadeddata", handleLoaded);
             unsubscribe();
         };
-    }, [scrollYProgress]);
+    }, [scrollYProgress, isMobile]);
 
+    /* ── Mobile: static hero, no scroll animation ── */
+    if (isMobile) {
+        return (
+            <div className="relative h-[100svh] w-full overflow-hidden">
+                {/* Show static optimized image */}
+                <Image
+                    src="/hero-mobile-optimal.jpeg"
+                    alt="Hero Background"
+                    fill
+                    priority
+                    className="absolute inset-0 w-full h-full object-cover"
+                />
+
+                {/* Bottom fade into content */}
+                <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#030508] via-[rgba(3,5,8,0.6)] to-transparent z-10" />
+            </div>
+        );
+    }
+
+    /* ── Desktop: scroll-scrub video ── */
     return (
         <div ref={containerRef} className="relative h-[300vh]">
             <div className="sticky top-0 h-screen w-full overflow-hidden">

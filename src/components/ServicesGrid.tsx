@@ -48,12 +48,12 @@ export function ServicesGrid() {
 
     return (
         <>
-            <div className="w-full mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="w-full mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
                 {servicesItems.map((item, idx) => (
                     <motion.div
                         key={item.id}
                         {...stagger(idx)}
-                        className="relative h-[480px] rounded-[32px] overflow-hidden group cursor-pointer anti-gravity"
+                        className="relative h-[180px] md:h-[480px] rounded-[24px] md:rounded-[32px] overflow-hidden group cursor-pointer anti-gravity"
                         onClick={() => setSelectedService(item)}
                         role="button"
                         tabIndex={0}
@@ -73,14 +73,14 @@ export function ServicesGrid() {
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-                        <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                            <h3 className="text-2xl font-bold text-white mb-3">
+                        <div className="absolute inset-0 p-4 md:p-8 flex flex-col justify-end">
+                            <h3 className="text-lg md:text-2xl font-bold text-white mb-1.5 md:mb-3">
                                 {item.title}
                             </h3>
-                            <p className="text-white/80 text-sm leading-relaxed border-l-2 border-white/30 pl-4 tracking-wide">
+                            <p className="text-white/80 text-[11px] md:text-sm leading-relaxed border-l-2 border-white/30 pl-3 md:pl-4 tracking-wide">
                                 {item.description}
                             </p>
-                            <span className="mt-3 inline-flex items-center gap-1.5 text-white/60 text-xs font-medium tracking-wider uppercase group-hover:text-white/90 transition-colors">
+                            <span className="mt-2 md:mt-3 inline-flex items-center gap-1.5 text-white/60 text-[9px] md:text-xs font-medium tracking-wider uppercase group-hover:text-white/90 transition-colors">
                                 Click to learn more →
                             </span>
                         </div>
