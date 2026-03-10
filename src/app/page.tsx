@@ -12,6 +12,7 @@ import { InteractiveNavbar } from "@/components/InteractiveNavbar";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { ProcessSection } from "@/components/ProcessSection";
+import { PreviousWorkSection } from "@/components/PreviousWorkSection";
 import { IndustriesSection } from "@/components/IndustriesSection";
 
 import {
@@ -141,9 +142,14 @@ export default function Home() {
       <ProcessSection />
 
       {/* ═══════════════════════════════════════
+          6. Previous Work
+          ═══════════════════════════════════════ */}
+      <PreviousWorkSection />
+
+      {/* ═══════════════════════════════════════
           6. Case Studies / Testimonials
           ═══════════════════════════════════════ */}
-      <section id="work" className="relative z-10 py-12 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
+      <section id="testimonials" className="relative z-10 py-12 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
         <AnimatedSection className="mb-6 md:mb-8 text-center">
           <span className="section-tag section-tag--centered text-xs md:text-sm py-1.5 px-3 md:py-2 md:px-4">Proven Outcomes</span>
           <h2 className="font-[family-name:var(--font-oswald)] uppercase font-extrabold text-2xl md:text-5xl mt-2 md:mt-4 text-[#1a1a1a]">

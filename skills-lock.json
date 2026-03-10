@@ -1,10 +1,30 @@
 {
   "version": 1,
   "skills": {
+    "design": {
+      "source": "SubframeApp/subframe",
+      "sourceType": "github",
+      "computedHash": "847d132ea5d6abcc0ef6c90d70c798d9351eecc94def0f1c6a65e74a61b62732"
+    },
+    "develop": {
+      "source": "SubframeApp/subframe",
+      "sourceType": "github",
+      "computedHash": "037bb4c80458c3f097c4fdf8aae5d7350016bce607af30ca5e11e0ec8bc7563e"
+    },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
       "computedHash": "25872a21881a950edc3db1f3329664d60405d539660ce05b3265db2de06a7dfd"
+    },
+    "import": {
+      "source": "SubframeApp/subframe",
+      "sourceType": "github",
+      "computedHash": "efa4623da640996696b5f33e848e06f4e6b801de8ddaac29cf030b1f2c3ed4a4"
+    },
+    "setup": {
+      "source": "SubframeApp/subframe",
+      "sourceType": "github",
+      "computedHash": "6876a1cea2d1d96e941e61f900954d7e884996b23fdce4a7a7a550c4268ea143"
     }
   }
 }
