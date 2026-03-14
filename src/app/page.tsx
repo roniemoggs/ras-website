@@ -12,7 +12,6 @@ import { InteractiveNavbar } from "@/components/InteractiveNavbar";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { ProcessSection } from "@/components/ProcessSection";
-import { PreviousWorkSection } from "@/components/PreviousWorkSection";
 import { IndustriesSection } from "@/components/IndustriesSection";
 
 import {
@@ -140,11 +139,6 @@ export default function Home() {
           5. Process
           ═══════════════════════════════════════ */}
       <ProcessSection />
-
-      {/* ═══════════════════════════════════════
-          6. Previous Work
-          ═══════════════════════════════════════ */}
-      <PreviousWorkSection />
 
       {/* ═══════════════════════════════════════
           6. Case Studies / Testimonials
