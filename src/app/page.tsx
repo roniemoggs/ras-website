@@ -1,5 +1,6 @@
 import { MeshGradientBg } from "@/components/ui/mesh-gradient-bg";
 import { HeroCanvas } from "@/components/HeroCanvas";
+// Deployment trigger: Ensuring live site sync with latest codebase.
 import Image from "next/image";
 
 import { GlassFilter } from "@/components/ui/liquid-glass";
